@@ -3,39 +3,25 @@ package com.driver.model;
 import javax.persistence.*;
 
 @Entity
-@Table
 public class Connection {
-
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Integer id;
-
-    @ManyToOne
-    @JoinColumn
-    private ServiceProvider serviceProvider;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     @ManyToOne
     @JoinColumn
     private User user;
 
-    public Connection() {
+    @ManyToOne
+    @JoinColumn
+    private ServiceProvider serviceProvider;
 
-    }
-
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
-    }
-
-    public ServiceProvider getServiceProvider() {
-        return serviceProvider;
-    }
-
-    public void setServiceProvider(ServiceProvider serviceProvider) {
-        this.serviceProvider = serviceProvider;
     }
 
     public User getUser() {
@@ -44,5 +30,13 @@ public class Connection {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public ServiceProvider getServiceProvider() {
+        return serviceProvider;
+    }
+
+    public void setServiceProvider(ServiceProvider serviceProvider) {
+        this.serviceProvider = serviceProvider;
     }
 }

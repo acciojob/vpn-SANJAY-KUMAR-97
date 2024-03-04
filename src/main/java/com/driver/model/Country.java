@@ -79,4 +79,5 @@ public class Country {
     public void setUser(User user) {
         this.user = user;
     }
-}// Note: Do not write @Enumerated annotation above CountryName in this model.
+}
+// Note: Do not write @Enumerated annotation above CountryName in this model.

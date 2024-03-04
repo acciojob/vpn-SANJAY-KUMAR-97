@@ -1,42 +1,25 @@
 package com.driver.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table
 public class Admin {
-
-
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     private String username;
-
     private String password;
 
-
     @OneToMany(mappedBy = "admin",cascade = CascadeType.ALL)
-    private List<ServiceProvider> serviceProviders = new ArrayList<>();
+    List<ServiceProvider> serviceProviders;
 
-
-    public Admin(){
-
-    }
-    public Admin(Integer id, String username, String password, List<ServiceProvider> serviceProviders) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.serviceProviders = serviceProviders;
-    }
-
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
